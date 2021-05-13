@@ -1,0 +1,32 @@
+.jg{font-family: 'Jeju Gothic', sans-serif;}
+.hn{font-family: 'Hanna', sans-serif;}
+
+body{
+    background-color: white;
+}
+.top{
+    margin-top: 20px;
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-left: 25px;
+    background-color: lavenderblush;
+}
+.item{
+    /* border: 2px solid #CE0058; */
+    margin: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    border-radius: 5%;
+    overflow: hidden;
+}
+.name1, .name2, .name3{
+    display: inline-block;
+    text-align: center;
+    width: 498px;
+    margin-top: 10px;
+}
