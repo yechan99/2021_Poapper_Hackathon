@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.left {
+  float: left;
+  /* width: 500px; */
+  width: 30%;
+  text-align: left;
+  color: DodgerBlue;
+  padding: 200px;
+  font-size: 60px;
+}
+.left p{
+	color: black;
+    font-size: 25px;
+}
+.right {
+  background-color: white;
+  float: left;
+  /* width: 350px; */
+  width: 30%;
+  padding: 15px;
+  margin: 150px;
+  text-align: center;
+  margin-right: 0;
+  margin-left: 50px;
+}
+
+.text {
+    height: 50px;
+    width: 330px;
+}
+.button1 {
+  background-color: dodgerblue;
+  color: white;
+  font-size: 20px;
+  height: 50px;
+    width: 330px;
+}.button2 {
+  background-color: limegreen;
+  color: white;
+  font-size: 20px;
+  height: 50px;
+    width: 150px;
+}
+
+@media (max-width: 1100px) {
+  /* For mobile phones: */
+  .left, .right {
+      margin: 30px;
+      width: 100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana; background-color: Aliceblue;">
+  <div class="left">
+  	<b>facebook</b>
+    <p> Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요. </p>
+  </div>
+  <div class="right">
+    <form>
+        <input type='text' class="text" placeholder="이메일 또는 전화번호"><br><br>
+        <input type='password' class="text" placeholder="비밀번호"><br><br>
+        <input type="button" class="button1" value="로그인">
+    </form>
+    <p style="color: dodgerblue;">비밀번호를 잊으셨나요?</p>
+    <input type="button" class="button2" value="새 계정 만들기">
+  </div>
+  
+</body>
+</html>
