@@ -1,28 +1,30 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const data = require('./databases')
+const data = require('./databases_지곡');
 
 const app = express();
+app.use(express.static(__dirname));
+app.use(express.static("pulic"));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded());
 
 app.get('/', (req, res) => {
     console.log(req.cookies);
-    res.sendFile(__dirname + "/1.html"); //알맞은 html 사용... html에서 action="/num" method="POST"를 통해 넘어가도록
+    res.sendFile(__dirname + "/main_page/main.html");
 })
 
 app.post('/num', (req, res) => {
     const body = req.body;
     console.log(body);
-    const f_num = body.num;
+    const f_num = body.number;
 
-    if(data.db[f_num] == 1){ //data에 존재하는 숫자라면
+    if(data.db[f_num] == 1){ //data에 존재하는 숫자라면, 대기중인 음식
         res.cookie('num', f_num);
         res.sendFile(__dirname + "/2.html");
-    }else if(data.db[f_num] == 2){
+    }else if(data.db[f_num] == 2){ //이미 완성된 음식
         res.sendFile(__dirname + "/4.html");
-    }else{
+    }else{ //data에 존재하지 않는 숫자라면, 잘못된 번호
         res.sendFile(__dirname + "/3.html");
     }
 })
