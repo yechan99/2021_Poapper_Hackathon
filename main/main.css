@@ -12,6 +12,8 @@ body{
     text-align: center;
 }
 .container{
+    border-radius: 2%;
+    overflow: hidden;
     font-family: 'Hanna', sans-serif;
     font-size: 25px;
     display: grid;
