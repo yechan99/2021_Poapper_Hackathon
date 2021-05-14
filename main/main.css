@@ -1,6 +1,9 @@
-.jg{font-family: 'Jeju Gothic', sans-serif;}
 .hn{font-family: 'Hanna', sans-serif;}
+.jg{font-family: 'Jeju Gothic', sans-serif;}
 
+h1{
+    font-family: 'Hanna', sans-serif;
+}
 body{
     background-color: white;
 }
@@ -9,35 +12,18 @@ body{
     text-align: center;
 }
 .container{
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    margin-left: 25px;
+    font-family: 'Hanna', sans-serif;
+    font-size: 25px;
+    display: grid;
     background-color: lavenderblush;
+    grid-template-columns: auto auto auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 .item{
-    /* border: 2px solid #CE0058; */
-    margin: 70px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    flex-grow: 1;
+    text-align: center;
+}
+.im{
     border-radius: 5%;
     overflow: hidden;
-}
-.name{
-    background-color: lavenderblush;
-    width: 1470px;
-    margin-left: 25px;
-    padding-bottom: 15px;
-}
-.name1, .name2, .name3{
-    display: inline-block;
-    text-align: center;
-    width: 470px;
-}
-.name2{
-    margin-left: 20px;
-}
-.name3{
-    margin-left: 18px;
 }
