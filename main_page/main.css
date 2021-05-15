@@ -29,4 +29,16 @@ body{
 .im{
     border-radius: 5%;
     overflow: hidden;
+    width: 350px;
+    height: 266.5px;
+}
+@media (max-width: 1100px) {
+    /* For mobile phones: */
+    .container{
+        grid-template-rows: auto auto;
+    }
+    .im{
+        width: 100px;
+        height: auto;
+    }
 }
