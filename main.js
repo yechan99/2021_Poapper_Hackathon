@@ -62,7 +62,7 @@ app.post('/num', (req, res) => {
             res.cookie('num', f_num);
             res.sendFile(__dirname + "/waiting_page/waiting.html");
         }else if(data3.db[f_num] == 2){
-            res.sendFile(__dirname + "/ready_page/ready.htm");
+            res.sendFile(__dirname + "/ready_page/ready.html");
         }else{
             res.sendFile(__dirname + "/wrong_page/wrong.html");
         }
