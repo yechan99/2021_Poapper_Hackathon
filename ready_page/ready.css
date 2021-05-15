@@ -1,10 +1,13 @@
 body{
     text-align: center;
 }
-h1{
+.text1{
+    margin-top: 200px;
+}
+.text1, .text2{
     font-size: 40px;
-    margin-top: 70px;
     font-family: 'Hanna', sans-serif;
+    margin-bottom: 20px;
 }
 #submit{
     background-color: #CE0058;
@@ -14,4 +17,11 @@ h1{
     height: 50px;
     width: 200px;
     font-family: 'Jeju Gothic', sans-serif;
+    margin-top: 50px;
+}
+@media (min-width: 500px) {
+    /* For mobile phones: */
+    .text1{
+        margin-top: 80px;
+    }
 }
