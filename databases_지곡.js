@@ -10,5 +10,8 @@ setTimeout(() => {
 setTimeout(() => {
     database[319] = 2
 }, 20000); //흠...
+setTimeout(() => {
+    database[319] = 2
+}, 30000); //흠...
 
 exports.db = database;

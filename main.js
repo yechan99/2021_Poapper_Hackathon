@@ -41,29 +41,29 @@ app.post('/num', (req, res) => {
     if(place == 1){
         if(data1.db[f_num] == 1){ //data에 존재하는 숫자라면, 대기중인 음식
             res.cookie('num', f_num);
-            res.sendFile(__dirname + "/2.html");
+            res.sendFile(__dirname + "/waiting_page/waiting.html");
         }else if(data1.db[f_num] == 2){ //이미 완성된 음식
-            res.sendFile(__dirname + "/4.html");
+            res.sendFile(__dirname + "/ready_page/ready.html");
         }else{ //data에 존재하지 않는 숫자라면, 잘못된 번호
-            res.sendFile(__dirname + "/3.html");
+            res.sendFile(__dirname + "/wrong_page/wrong.html");
         } 
     }else if(place == 2){
         if(data2.db[f_num] == 1){
             res.cookie('num', f_num);
-            res.sendFile(__dirname + "/2.html");
+            res.sendFile(__dirname + "/waiting_page/waiting.html");
         }else if(data2.db[f_num] == 2){
-            res.sendFile(__dirname + "/4.html");
+            res.sendFile(__dirname + "/ready_page/ready.html");
         }else{
-            res.sendFile(__dirname + "/3.html");
+            res.sendFile(__dirname + "/wrong_page/wrong.html");
         }
     }else if(place == 3){
         if(data3.db[f_num] == 1){
             res.cookie('num', f_num);
-            res.sendFile(__dirname + "/2.html");
+            res.sendFile(__dirname + "/waiting_page/waiting.html");
         }else if(data3.db[f_num] == 2){
-            res.sendFile(__dirname + "/4.html");
+            res.sendFile(__dirname + "/ready_page/ready.html");
         }else{
-            res.sendFile(__dirname + "/3.html");
+            res.sendFile(__dirname + "/wrong_page/wrong.html");
         }
     }
 })
@@ -77,17 +77,17 @@ app.get('/wait', (req, res) => {
     if(place == 1){
         setInterval(()=>{
             if(data1.db[f_num] == 2)
-                res.sendFile(__dirname + "/4.html");
+                res.sendFile(__dirname + "/ready_page/ready.html");
             else console.log("대기중");}, 3000)
     }else if(place == 2){
         setInterval(()=>{
             if(data2.db[f_num] == 2)
-                res.sendFile(__dirname + "/4.html");
+                res.sendFile(__dirname + "/ready_page/ready.html");
             else console.log("대기중");}, 3000)
     }else if(place == 3){
         setInterval(()=>{
             if(data3.db[f_num] == 2)
-                res.sendFile(__dirname + "/4.html");
+                res.sendFile(__dirname + "/ready_page/ready.html");
             else console.log("대기중");}, 3000)
     }
 })

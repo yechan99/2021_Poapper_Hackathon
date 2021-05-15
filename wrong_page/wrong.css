@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+    margin-top: 70px;
+    font-family: 'Hanna', sans-serif;
+}
+.text{
+    font-family: 'Jeju Gothic', sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+}
+#red{
+    color: red;
+}
+#submit{
+    /* background-color: #CE0058; */
+    color: black;
+    border: 0;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+    font-family: 'Jeju Gothic', sans-serif;
+}
