@@ -11,6 +11,7 @@ form{
 #number{
     height: 100px;
     width: 330px;
+    font-family: 'Jeju Gothic', sans-serif;
     font-size: 30px;
 }
 #submit{
@@ -20,4 +21,5 @@ form{
     font-size: 20px;
     height: 50px;
     width: 330px;
+    font-family: 'Jeju Gothic', sans-serif;
 }
