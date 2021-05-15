@@ -5,6 +5,12 @@ h1{
     font-size: 33px;
     margin-top: 120px;
     font-family: 'Hanna', sans-serif;
+    margin-bottom: 9px;
+}
+.number{
+    font-size: 20px;
+    font-family: 'Jeju Gothic', sans-serif;
+    margin-bottom: 16px;
 }
 .text{
     font-family: 'Jeju Gothic', sans-serif;
@@ -23,6 +29,7 @@ h1{
     width: 200px;
     font-family: 'Jeju Gothic', sans-serif;
 }
+
 @media (min-width: 500px) {
     /* For mobile phones: */
     h1{
@@ -37,5 +44,8 @@ h1{
     #submit{
         height: 35px;
         width: 160px;
+    }
+    .number{
+        margin-bottom: 0;
     }
 }

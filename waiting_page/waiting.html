@@ -24,13 +24,23 @@
   <body onload="get_number()">
     <div class="text1"><span class="number"></span>음식이 준비되고 있어요!</div>
     <img class="im" src="/waiting_page/waiting.png" width="210px">
-    <div class="text2">
-      아래 <span id="red">확인 버튼을 누르고</span> 기다려주세요.<br>
-      준비가 완료되면 화면이 전환됩니다!
+
+    <div class="container">
+      <div class="text2">
+        <span id="red">확인 버튼을 누르고</span> 기다려주세요.<br>
+        준비가 완료되면 화면이 전환됩니다!
+      </div>
+      <form class="form1" action="/wait" method="GET">
+        <p><input type="submit" id="submit1" value="확인"</p>
+      </form>
+      <div class="text2">
+        <span style="text-decoration: underline;">번호를 잘못 입력하셨을 경우,</span> 취소 버튼을 눌러<br>
+        첫 화면으로 돌아갈 수 있습니다.
+      </div>
+      <form action="/cancel" method="GET">
+        <p><input type="submit" id="submit2" value="취소"</p>
+      </form>
     </div>
-    <form action="/wait" method="GET">
-      <p><input type="submit" id="submit" value="확인"</p>
-    </form>
 
   </body>
 </html>

@@ -6,10 +6,23 @@
     <link rel="stylesheet" href="/wrong_page/wrong.css">
     <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
+    <script>
+      function get_number(){
+        var target = document.querySelector('.number');
+        fetch('http://localhost:8080/get_number')
+        .then(function(res){
+          return res.json();
+        })
+        .then(num=>{
+          target.innerHTML = "<입력하신 번호: " + num + ">";
+        })
+      }
+    </script>
   </head>
   
-  <body>
+  <body onload="get_number()">
     <h1>주문번호 입력오류입니다.</h1>
+    <div class="number"></div>
     <img class="im" src="/wrong_page/wrong.png" width="210px">
 
     <div class="text">

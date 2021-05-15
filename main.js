@@ -67,4 +67,8 @@ app.get('/wait', (req, res) => {
     }, 3000)
 })
 
+app.get('/cancel', (req, res) => {
+    res.sendFile(__dirname + "/main_page/main.html");
+})
+
 app.listen(8080, () => console.log("Server is listening on 8080 port!!"));
