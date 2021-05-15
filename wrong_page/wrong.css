@@ -2,13 +2,13 @@ body{
     text-align: center;
 }
 h1{
-    font-size: 40px;
+    font-size: 33px;
     margin-top: 70px;
     font-family: 'Hanna', sans-serif;
 }
 .text{
     font-family: 'Jeju Gothic', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     margin-top: 20px;
 }
 #red{
@@ -22,4 +22,20 @@ h1{
     height: 50px;
     width: 200px;
     font-family: 'Jeju Gothic', sans-serif;
+}
+@media (min-width: 500px) {
+    /* For mobile phones: */
+    h1{
+        margin-top: 20px;
+    }
+    #rotation{
+        display: none;
+    }
+    .im{
+        width: 140px;
+    }
+    #submit{
+        height: 35px;
+        width: 160px;
+    }
 }
