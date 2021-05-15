@@ -9,6 +9,12 @@ body{
     font-family: 'Hanna', sans-serif;
     margin-bottom: 20px;
 }
+.number{
+    font-size: 25px;
+    font-family: 'Jeju Gothic', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
 #submit{
     background-color: #CE0058;
     color: white;
@@ -17,11 +23,11 @@ body{
     height: 50px;
     width: 200px;
     font-family: 'Jeju Gothic', sans-serif;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 @media (min-width: 500px) {
     /* For mobile phones: */
     .text1{
-        margin-top: 80px;
+        margin-top: 60px;
     }
 }

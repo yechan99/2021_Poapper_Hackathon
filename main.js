@@ -1,8 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const data1 = require('./databases_지곡');
-const data2 = require('./databases_학관');
-const data3 = require('./databases_버거킹');
+const data = [require('./databases_jigok'), require('./databases_sbar'), require('./databases_burger')];
 
 const app = express();
 app.use(express.static(__dirname));
@@ -32,65 +30,41 @@ app.get('/3', (req, res) => {
     res.sendFile(__dirname + "/input_page/input.html");
 })
 
+var num;
 app.post('/num', (req, res) => {
     const body = req.body;
     console.log(body);
-    const f_num = body.number;
+    num = body.number;
 
     console.log("여기는 num이고 place는 " + place);
-
-    if(place == 1){
-        if(data1.db[f_num] == 1){ //data에 존재하는 숫자라면, 대기중인 음식
-            res.cookie('num', f_num);
-            res.sendFile(__dirname + "/waiting_page/waiting.html");
-        }else if(data1.db[f_num] == 2){ //이미 완성된 음식
-            res.sendFile(__dirname + "/ready_page/ready.html");
-        }else{ //data에 존재하지 않는 숫자라면, 잘못된 번호
-            res.sendFile(__dirname + "/wrong_page/wrong.html");
-        } 
-    }else if(place == 2){
-        if(data2.db[f_num] == 1){
-            res.cookie('num', f_num);
-            res.sendFile(__dirname + "/waiting_page/waiting.html");
-        }else if(data2.db[f_num] == 2){
-            res.sendFile(__dirname + "/ready_page/ready.html");
-        }else{
-            res.sendFile(__dirname + "/wrong_page/wrong.html");
-        }
-    }else if(place == 3){
-        if(data3.db[f_num] == 1){
-            res.cookie('num', f_num);
-            res.sendFile(__dirname + "/waiting_page/waiting.html");
-        }else if(data3.db[f_num] == 2){
-            res.sendFile(__dirname + "/ready_page/ready.html");
-        }else{
-            res.sendFile(__dirname + "/wrong_page/wrong.html");
-        }
-    }
+    if(data[place-1].db[num] == 1){ //data에 존재하는 숫자라면, 대기중인 음식
+        res.cookie('num', num);
+        res.sendFile(__dirname + "/waiting_page/waiting.html");
+    }else if(data[place-1].db[num] == 2){ //이미 완성된 음식
+        res.sendFile(__dirname + "/ready_page/ready.html");
+    }else{ //data에 존재하지 않는 숫자라면, 잘못된 번호
+        res.sendFile(__dirname + "/wrong_page/wrong.html");
+    } 
 })
 
-app.get('/waiting_page/waiting.html', (req, res) => {
+app.get('/get_number', (req, res) => {
+    res.json(num);
+})
+
+app.get('/wait', (req, res) => {
     f_num = req.cookies.num;
     console.log(f_num);
 
     console.log("여기는 wait이고 place는 " + place);
-
-    if(place == 1){
-        setInterval(()=>{
-            if(data1.db[f_num] == 2)
-                res.sendFile(__dirname + "/ready_page/ready.html");
-            else console.log("대기중");}, 3000)
-    }else if(place == 2){
-        setInterval(()=>{
-            if(data2.db[f_num] == 2)
-                res.sendFile(__dirname + "/ready_page/ready.html");
-            else console.log("대기중");}, 3000)
-    }else if(place == 3){
-        setInterval(()=>{
-            if(data3.db[f_num] == 2)
-                res.sendFile(__dirname + "/ready_page/ready.html");
-            else console.log("대기중");}, 3000)
-    }
+    var refreshIntervalId = setInterval(()=>{
+        if(data[place-1].db[f_num] == 2){
+            res.sendFile(__dirname + "/ready_page/ready.html");
+            clearInterval(refreshIntervalId);
+        }
+        else {
+            console.log("대기중");
+        }
+    }, 3000)
 })
 
 app.listen(8080, () => console.log("Server is listening on 8080 port!!"));

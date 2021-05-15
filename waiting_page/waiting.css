@@ -1,8 +1,39 @@
 body{
     text-align: center;
 }
-h1{
-    font-size: 40px;
-    margin-top: 70px;
+.text1{
+    font-size: 25px;
+    margin-top: 120px;
+    margin-bottom: 30px;
     font-family: 'Hanna', sans-serif;
+}
+.number{
+    font-size: 35px;
+    font-family: 'Hanna', sans-serif;
+}
+.text2{
+    font-size: 17px;
+    margin-top: 20px;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+#submit{
+    background-color: #CE0058;
+    color: white;
+    border: 0;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+#red{
+    color: red;
+}
+@media (min-width: 500px) {
+    /* For mobile phones: */
+    .text1{
+        margin-top: 30px;
+    }
+    .im{
+        width: 130px;
+    }
 }

@@ -6,11 +6,24 @@
     <link rel="stylesheet" href="/ready_page/ready.css">
     <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
+    <script>
+      function get_number(){
+        var target = document.querySelector('.number');
+        fetch('http://localhost:8080/get_number')
+        .then(function(res){
+          return res.json();
+        })
+        .then(num=>{
+          target.innerHTML = "<주문번호 " + num + ">";
+        })
+      }
+    </script>
   </head>
   
-  <body>
+  <body onload="get_number()">
     <div class="text1">주문하신 메뉴가 </div>
     <div class="text2">준비되었어요 :)</div>
+    <div class="number"></div>
 
     <form action="../main_page/main.html" method="GET">
       <p><input type="submit" id="submit" value="확인"</p>
