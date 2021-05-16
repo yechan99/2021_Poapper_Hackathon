@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+}
+.text1{
+    margin-top: 200px;
+}
+.text1, .text2{
+    font-size: 40px;
+    font-family: 'Hanna', sans-serif;
+    margin-bottom: 20px;
+}
+.number{
+    font-size: 25px;
+    font-family: 'Jeju Gothic', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+#submit{
+    background-color: #CE0058;
+    color: white;
+    border: 0;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+    font-family: 'Jeju Gothic', sans-serif;
+    margin-top: 25px;
+}
+@media (min-width: 500px) {
+    /* For mobile phones: */
+    .text1{
+        margin-top: 60px;
+    }
+}

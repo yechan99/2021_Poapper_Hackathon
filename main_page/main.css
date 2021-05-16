@@ -5,12 +5,12 @@ h1{
     font-family: 'Hanna', sans-serif;
 }
 body{
+    text-align: center;
     background-color: white;
 }
 .top{
     margin-top: 20px;
-    margin-bottom: 40px;
-    text-align: center;
+    margin-bottom: 20px;
 }
 .container{
     border-radius: 2%;
@@ -18,15 +18,40 @@ body{
     font-family: 'Hanna', sans-serif;
     font-size: 25px;
     display: grid;
-    background-color: lavenderblush;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
     padding-top: 20px;
     padding-bottom: 10px;
 }
 .item{
-    text-align: center;
+    margin: 10px;
 }
 .im{
     border-radius: 5%;
     overflow: hidden;
+    width: 200px;
+    height: auto;
+}
+@media (max-height: 800px) {
+    /* For mobile phones: */
+    .menu{
+        width: 80px;
+    }
+    .top{
+        margin-bottom: 0;
+    }
+    .container{
+        padding-top: 0;
+    }
+    h1{
+        font-size: 28px;
+    }
+    .im{
+        width: 150px;
+    }
+}
+@media (min-width: 500px) {
+    /* For mobile phones: */
+    .container{
+        grid-template-columns: auto auto auto;
+    }
 }
