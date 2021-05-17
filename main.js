@@ -51,12 +51,14 @@ app.get('/get_number', (req, res) => {
     res.json(num);
 })
 
+var refreshIntervalId;
+
 app.get('/wait', (req, res) => {
     f_num = req.cookies.num;
     console.log(f_num);
 
     console.log("여기는 wait이고 place는 " + place);
-    var refreshIntervalId = setInterval(()=>{
+    refreshIntervalId = setInterval(()=>{
         if(data[place-1].db[f_num] == 2){
             res.sendFile(__dirname + "/ready_page/ready.html");
             clearInterval(refreshIntervalId);
@@ -68,6 +70,9 @@ app.get('/wait', (req, res) => {
 })
 
 app.get('/cancel', (req, res) => {
+    if(refreshIntervalId){
+        clearInterval(refreshIntervalId);
+    }
     res.sendFile(__dirname + "/main_page/main.html");
 })
 

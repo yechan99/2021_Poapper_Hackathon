@@ -3,25 +3,28 @@
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waiting for Food</title>
-    <!-- <link rel="stylesheet" href="/waiting_page/waiting.css"> -->
     <link rel="stylesheet" href="/waiting_page/waiting.css">
     <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
-    <script>
+    <script type="text/javascript">
       function get_number(){
         var target = document.querySelector('.number');
         fetch('http://localhost:8080/get_number')
         .then(function(res){
           return res.json();
         })
-        .then(num=>{
+        .then(function(num){
           target.innerHTML = num + "번 ";
         })
       }
+      window.addEventListener('load', 
+        function() { 
+          get_number();
+        }, false);
     </script>
   </head>
   
-  <body onload="get_number()">
+  <body>
     <div class="text1"><span class="number"></span>음식이 준비되고 있어요!</div>
     <img class="im" src="/waiting_page/waiting.png" width="210px">
 
